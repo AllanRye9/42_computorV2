@@ -1,5 +1,5 @@
 TSC = ./node_modules/.bin/tsc
-NAME = bin/computorV2
+NAME = computorv2
 
 all: $(NAME)
 
@@ -12,11 +12,10 @@ build: node_modules/.bin/tsc
 	$(TSC) --target ES2020 --module NodeNext --moduleResolution NodeNext \
 		--rootDir . --outDir dist --strict false --esModuleInterop \
 		--skipLibCheck --types node --rewriteRelativeImportExtensions \
-		computorV2/computorV2.ts
-	mkdir -p bin
+		V2/computorV2.ts
 	printf '%s\n' '#!/bin/sh' \
 		'SCRIPT_DIR=$$(CDPATH= cd -- "$$(dirname -- "$$0")" && pwd)' \
-		'exec node "$$SCRIPT_DIR/../dist/computorV2/computorV2.js" "$$@"' \
+		'exec node "$$SCRIPT_DIR/dist/V2/computorV2.js" "$$@"' \
 		> $(NAME)
 	chmod +x $(NAME)
 
