@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
-EXECUTABLE="$SCRIPT_DIR/bin/computorV2"
+EXECUTABLE="$SCRIPT_DIR/V2"
 
 if [ ! -x "$EXECUTABLE" ]; then
     echo "Missing executable: $EXECUTABLE" >&2
